@@ -2,12 +2,8 @@
 header{
 	background-color: @baseColor;
 	color: #fff;
-	text-transform: uppercase;
-	font-family: @medium-fontFamily;
-	font-size: .875rem;
-	letter-spacing: 1px;
-	line-height: 1.125rem;
-	// height: 300px;
+	.fonts-top();
+	margin-bottom: 30px;
 	.top{
 		.wrapper();
 		display: flex;
@@ -34,11 +30,7 @@ header{
 		border: none;
 		border-bottom: 1px solid #699fff;
 		background-color: @baseColor;
-		text-transform: uppercase;
-		font-family: @medium-fontFamily;
-		font-size: .875rem;
-		letter-spacing: 1px;
-		line-height: 1.125rem;
+		.fonts-top();
 		&::-webkit-input-placeholder{color: @placeholder;}
 		&::-moz-placeholder{color: @placeholder;}
 		&:-ms-input-placeholder{color: @placeholder;}

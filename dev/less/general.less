@@ -3,9 +3,16 @@
 @import 'import/_setting';
 @import 'import/_mixins';
 @import 'import/fonts';
+@import 'import/selectric';
 
 *{
 	box-sizing: border-box;
+	&:focus{
+		outline: none;
+	}
+	option:selected{
+		background-color: red;
+	}
 }
 body{
 }
@@ -15,9 +22,13 @@ a{
 	color: inherit;
 }
 
+select::-ms-expand {
+  display: none;
+}
 
 
 
 
 
 @import 'import/header';
+@import 'import/main';

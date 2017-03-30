@@ -2,11 +2,136 @@
 
 .main{
 	.wrapper();
+	margin-bottom: 75px;
 	.filter{
-		color: #fff;
+		color: @gray;
 		.fonts-top();
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		.col-10();
+		margin-bottom: 45px;
 		.tips{
-			// box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
+			min-width: 240px;
+		}
+		.brands{
+			min-width: 190px;
+			margin-right: 10px;
+		}
+		&-price{
+			display: inline-flex;
+			position: relative;
+			&:before{
+					content: "от";
+					position: absolute;
+					top: 12px;
+					left: 10px;
+					right: 0;
+					bottom: 0;
+					display: block;
+					height: 1px;
+					width: 1px;
+				}
+			&:after{
+					content: "до";
+					position: absolute;
+					top: 12px;
+					left: 170px;
+					right: 0;
+					bottom: 0;
+					display: block;
+					height: 1px;
+					width: 1px;
+				}
+			input{
+				width: 158px;
+				padding: 10px;
+				border: 1px solid @secondColor;
+				text-align: right;
+				.fonts-top();
+				&:first-child{
+					border-right: none;
+				}
+				&:hover, &:focus{
+					border-color: @baseColor;
+					background: rgba(68, 136, 255, .05);
+				}
+			}
+		}
+	}
+
+	.content{
+		.row-flex();
+		.item{
+			display: flex;
+			flex-direction: column;
+			// justify-content: space-between;
+			.col-3();
+			border-right: 1px solid  @light-gray;
+			border-bottom: 1px solid @light-gray;
+			font-family: @medium-fontFamily;
+			line-height: 1.375rem;
+			letter-spacing: 0px;
+			font-size: 1.125rem;
+			color: @secondColor;
+			padding: 15px;
+			&:nth-child(4n+1){
+				padding-left: 0;
+			}
+			&:nth-child(4n){
+				border-right: none;
+			}
+			&:hover{
+			 	background: rgba(68, 136, 255, .05);
+				color: @baseColor;
+				border: 1px solid @baseColor;
+			}
+			.img-wrap{
+				display: flex;
+				align-items: center;
+				margin-bottom: 30px;
+				min-height: 130px;
+				img{
+					max-height: 150px;
+				}
+			}
+			.title{
+				margin-bottom: 15px;
+			}
+			.sub-title{
+				font-family: @regular-fontFamily;
+				line-height: 1.125rem;
+				font-size: 0.875rem;
+				color: @gray;
+				margin-bottom: 30px;
+			}
+			&-price{
+				margin-top: auto;
+				display: flex;
+				justify-content: space-between;
+				color: @baseColor;
+				border-top: 1px solid @baseColor;
+				padding: 15px 0;
+				span{
+					background: url(../img/icons/cart_blue.svg);
+					height: 20px;
+					width: 20px;
+				}
+			}
+			.banner{
+				display: flex;
+				align-items: flex-end;
+				background: url(../img/banner_a.png) repeat-Y top left;
+				height: 100%;
+				p{
+					padding: 30px;
+					color: #fff;
+				}
+			}
+			.banner_b{
+				background: url(../img/banner_b.png) no-repeat top right;
+				height: 100%;
+			}
 		}
 	}
 }

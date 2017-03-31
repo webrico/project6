@@ -61,14 +61,23 @@ gulp.task('html', function(){
 		.pipe(connect.reload());
 });
 
+gulp.task('js', function(){
+	gulp.src('dev/js/**/*.js')
+		.pipe(gulp.dest('build/js/'))
+		.pipe(connect.reload());
+});
+
 gulp.task('default', function(){
-	gulp.start('css', 'html', 'server', 'move');
+	gulp.start('css', 'html', 'server', 'move', 'js');
 
 	gulp.watch(['dev/less/**/*.less'], function(){
 		gulp.start('css');
 	});	
 	gulp.watch(['dev/html/**/*.html'], function(){
 		gulp.start('html');
+	});
+	gulp.watch(['dev/js/**/*.js'], function(){
+		gulp.start('js');
 	});
 });
 

@@ -1,6 +1,7 @@
 //  start footer
 
 .footer{
+	flex-shrink: 0;
 	.wrapper();
 	display: flex;
 	padding-bottom: 30px;
@@ -8,8 +9,14 @@
 	span{
 		color: #9b9b9b;
 	}
-	.make-in{
-		.offset-left(4);
+	&-info{
+		span{
+			padding-right: 2%;
+		}
+		a{
+			padding: 0 2%;
+			flex-grow: 0;
+		}
 	}
 }
 

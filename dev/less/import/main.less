@@ -9,10 +9,12 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		.col-10();
 		margin-bottom: 45px;
 		.tips{
 			min-width: 240px;
+			@media screen and (max-width: @break_md){
+        min-width: 220px;
+    	}
 		}
 		.brands{
 			min-width: 190px;
@@ -60,6 +62,14 @@
 					background: rgba(68, 136, 255, .05);
 				}
 			}
+			@media screen and (max-width: @break_md){
+      	input{
+      		width: 100px;
+      	}
+				&:after{
+					left: 110px;
+				}
+  		}
 		}
 	}
 

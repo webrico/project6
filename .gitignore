@@ -2,7 +2,6 @@
 *.rar
 *.7z
 node_modules/
-build/
 .DS_Store
 Thumbs.db
 !resources/psd.zip

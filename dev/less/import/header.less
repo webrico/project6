@@ -11,17 +11,26 @@ header{
 		padding-top: 20px;
 		align-items: center;
 		margin-bottom: 25px;
+		@media screen and (max-width: @break_xs) {
+			display: none;
+		}
 	}
 	.logo{
+		img{
+			max-width: 100%;
+			max-height: 100%;
+		}
 	}
 	.phone{
-		min-width: 118px;
+		text-align: center;
 	}
 	.search-wrap{
 		position: relative;
-		width: 530px;
-		.col-md-4();
-		.col-sm-3();
+		.col-5();
+		.col-md-3();
+		@media screen and (max-width: @break_sm) {
+			display: none;
+		}
 	}
 	.search{
 		color: #fff;
@@ -38,64 +47,153 @@ header{
 			outline: none;
 			border-bottom-color: #fff;
 		}
+		@media screen and (max-width: @break_sm) {
+			display: none;
+		}
 	}
 	.submit{
 		position: absolute;
 		top: 2px;
 		left: 0;
+		@media screen and (max-width: @break_sm) {
+			display: none;
+		}
 	}
 	.info{
-		min-width: 163px;
+		text-align: center;
 	}
 	.wrap{
 		.wrapper();
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-	}
-	nav{
-			display: flex;
-		.active{
-			background-color: @secondColor;
-			&:hover{
-				background-color: @secondColor;
-			}
+		@media screen and (max-width: @break_xs){
+			height: 40px;
 		}
-		a{
-			display: flex;
-			flex-shrink: 0;
-			padding: 15px;
-			&:first-child{
-				padding-left: 0;
+		nav{
+				display: flex;
+			.active{
+				background-color: @secondColor;
 				&:hover{
-					padding-left: 5px;
+					background-color: @secondColor;
 				}
 			}
-			&:hover{
-				background-color: #447ada;
+			a{
+				display: flex;
+				flex-shrink: 0;
+				padding: 15px;
+				&:first-child{
+					padding-left: 0;
+					&:hover{
+						padding-left: 5px;
+					}
+				}
+				&:hover{
+					background-color: #447ada;
+				}
+				@media screen and (max-width: @break_sm) {
+					display: none;
+				}
+			}
+
+			.nav_sm{
+				display: none;
+				@media screen and (max-width: @break_sm) {
+					display: block;
+				}
+				@media screen and (max-width: @break_xs) {
+					height: 20px;
+				}
+				span{
+					display: none;
+					@media screen and (max-width: @break_md) {
+						display: block;
+					}
+					@media screen and (max-width: @break_xs) {
+						display: none;
+					}
+				}
+				.burger{
+					position: relative;
+					top: 50%;
+					left: 0;
+					background-color: #fff;
+					display: none;
+					height: 2px;
+					width: 20px;
+					@media screen and (max-width: @break_xs) {
+						display: block;
+					}
+					&:before, &:after{
+						content: '';
+						position: absolute;
+						display: block;
+						top: 0;
+						left: 0;
+						height: 2px;
+						width: 20px;
+						background-color: inherit;
+					}
+					&:before{
+						top: 4px;
+					}
+					&:after{
+						top: -4px;
+					}
+				}
 			}
 		}
-	}
-	.cart{
-		a{
-			position: relative;
-			flex-shrink: 0;
-			padding: 15px 0 15px 35px;
-			&:before{
-				content: '';
-				left: 8px;
-				top: 13px;
-				position: absolute;
+		.logo{
+			display: none;
+			@media screen and (max-width: @break_xs) {
+				display: flex;
+				flex-basis: 50%;
+			}
+		}
+		.search_sm{
+			display: none;
+			@media screen and (max-width: @break_sm) {
+				display: block;
+				width: 20px;
+				height: 20px;
+				background-image: url(../img/icons/search_white.svg);
+				cursor: pointer;
+			}
+			@media screen and (max-width: @break_xs){
+				order: 2;
+			}
+		}
+
+		.cart{
+			flex-basis: 100px;
+			@media screen and (max-width: @break_md){
+				flex-basis: 0;
+			}
+			@media screen and (max-width: @break_sm){
+				flex-basis: 100px;
+			}
+			@media screen and (max-width: @break_xs){
+				flex-basis: 20px;
+				order: 3;
+			}
+			a{
 				display: block;
 				width: 20px;
 				height: 20px;
 				background-image: url(../img/icons/cart_white.svg);
+				span{
+					padding-left: 25px;
+					@media screen and (max-width: @break_md){
+						display: none;
+					}
+					@media screen and (max-width: @break_sm){
+						display: block;
+					}
+					@media screen and (max-width: @break_xs){
+						display: none;
+					}
+				}
 			}
-			@media screen and (max-width: @break_md){
-        span{
-        	display: none;
-        }
-    	}
 		}
 	}
 }

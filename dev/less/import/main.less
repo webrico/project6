@@ -3,8 +3,14 @@
 .main{
 	.wrapper();
 	margin-bottom: 75px;
+	@media screen and (max-width: @break_xs) {
+		padding: 0;
+	}
 	.filter{
 		color: @gray;
+		@media screen and (max-width: @break_sm) {
+			display: none;
+		}
 		.fonts-top();
 		display: flex;
 		align-items: center;
@@ -74,12 +80,20 @@
 	}
 
 	.content{
+		@media screen and (max-width: @break_xs) {
+			.banner{
+				display: none;
+			}
+		}
 		.row-flex();
 		.item{
 			cursor: pointer;
 			display: flex;
 			flex-direction: column;
 			.col-3();
+			.col-md-4();
+			.col-sm-6();
+			.col-xs-12();
 			border: 1px solid  @light-gray;
 			border-left-color: transparent;
 			border-top-color: transparent;
@@ -91,12 +105,53 @@
 			padding: 15px;
 			&:nth-child(4n+1){
 				padding-left: 0;
+				@media screen and (max-width: @break_md) {
+					padding: 15px;
+				}
+				@media screen and (max-width: @break_xs) {
+					padding-left: 30px;
+					padding-right: 30px;
+					&:hover{
+						padding-left: 30px;
+					}
+				}
 				&:hover{
 					padding-left: 15px;
 				}
 			}
+			@media screen and (max-width: @break_xs) {
+					padding-left: 30px;
+					padding-right: 30px;
+			}
 			&:nth-child(4n){
 				border-right: none;
+				@media screen and (max-width: @break_md) {
+					border-right: 1px solid  @light-gray;
+				}
+			}
+
+			@media screen and (max-width: @break_md) {
+				&:nth-child(3n){
+					border-right: none;
+				}
+			}
+			@media screen and (max-width: @break_sm) {
+				&:nth-child(3n){
+					border-right: 1px solid  @light-gray;
+				}
+				&:nth-child(2n){
+					border-right: none;
+				}
+			}
+			@media screen and (max-width: @break_xs){
+				&:nth-child(3n){
+					border-right: none;
+				}
+				border: none;
+				border-bottom: 1px solid  @light-gray;
+				&:first-child{
+					border-top: 1px solid  @light-gray;
+				}
 			}
 			&:hover{
 			 	background: rgba(68, 136, 255, .05);
@@ -105,7 +160,6 @@
 			}
 			.img-wrap{
 				display: flex;
-				align-items: center;
 				margin-bottom: 30px;
 				min-height: 130px;
 				img{
@@ -136,7 +190,7 @@
 					width: 20px;
 				}
 			}
-			.banner{
+			.banner_a{
 				display: flex;
 				align-items: flex-end;
 				background: url(../img/banner_a.png) repeat-Y top left;
